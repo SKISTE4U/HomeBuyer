@@ -132,7 +132,7 @@ def update_script():
             f.write(response.content)
         print("Скрипт успешно обновлен!")
     except Exception as e:
-        print(f"Ошибка при обновлении скрипта: {e}")
+        print(f"Ошибка при обновлении скрипта:\n{e}")
 
 def updater():
     print('Запустился поток с обновлением')
