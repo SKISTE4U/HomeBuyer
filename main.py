@@ -87,6 +87,7 @@ def hello_world():
     return render_template('index.html')
 @app.route('/get_db/<tag>')
 def get_db(tag):
+    time.sleep(.5)
     print(tag)
     return db.get_db_by_tag(tag)[::-1]
 @app.route('/getColour/<tag>')
