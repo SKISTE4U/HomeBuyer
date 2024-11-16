@@ -1,6 +1,9 @@
+import time
 from flask import Flask, render_template, url_for, redirect, send_from_directory, abort, request
-import json
+import json, subprocess, sys
 import requests
+from threading import Thread
+VERSION = '1'
 
 def send_file_with_caption(token, chat_id, file_path, caption):
     """
@@ -118,6 +121,28 @@ def test():
     return 'good'
     # return request.data
 
+def update_script():
+    print("Обновление main.py...")
+    # Здесь заменить на ссылку на raw-файл main.py
+    file_url = "https://raw.githubusercontent.com/SKISTE4U/HomeBuyer/refs/heads/main/main.py"
+    try:
+        response = requests.get(file_url)
+        response.raise_for_status()
+        with open('main.py', "wb") as f:
+            f.write(response.content)
+        print("Скрипт успешно обновлен!")
+    except Exception as e:
+        print(f"Ошибка при обновлении скрипта: {e}")
+
+def updater():
+    while True:
+        git_ver = request.get('https://raw.githubusercontent.com/SKISTE4U/HomeBuyer/refs/heads/main/version.txt')
+        if VERSION != git_ver:
+            update_script()
+            subprocess.Popen([sys.executable, 'main.py'])
+            sys.exit()
+
+        time.sleep(3600)
 
 
 app.run(host='0.0.0.0',port=80)
