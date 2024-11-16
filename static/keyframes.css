@@ -1,0 +1,36 @@
+
+@keyframes show_popup_wrapper {
+    0%{
+        display: flex;
+        backdrop-filter: blur(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1; 
+    }
+    100%{
+        backdrop-filter: blur(10px);
+    }
+}
+@keyframes hide_popup_wrapper {
+    0%{
+        backdrop-filter: blur(10px);
+    }
+    
+    50%{
+        opacity: 1;
+    }
+    100%{
+        backdrop-filter: blur(0);
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes search_by_tags_show {
+    0%{
+        transform: scaleY(0);
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}

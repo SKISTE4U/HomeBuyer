@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../static/examples.js"></script>
+    <link rel="stylesheet" href="static/css.css">
+    <link rel="stylesheet" href="../static/css.css">
+    <link rel="stylesheet" href="../static/switcher.css">
+    <link rel="stylesheet" href="../static/keyframes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="popup_wrapper">
+        <div class="popup">
+            <div class="one_line">
+                <h2 style="margin: 0;">Добавить запись</h2>
+            </div>
+            <div class="one_line">
+                
+                <input type="text" placeholder="Название">
+                <input type="text" placeholder="Сумма">
+            </div>
+            <h3>Теги:</h3>
+            <div class="one_line taags">
+                <!-- <div class="one_tag">ТПлюс</div>
+                <div class="one_tag">Деревня</div>
+                <div class="one_tag">Шевченко 83</div> -->
+            </div>
+            <div class="one_line">
+                <button>Отмена</button>
+                <button>Добавить</button>
+            </div>
+        </div>
+    </div>
+    <div class="header_img">
+        <img src="static/space.webp" alt="" srcset="">
+    </div>
+    
+    <section>
+        <header>
+            <h2>Оплата жкх</h2>
+            <div class="delivery-swither">
+                <label class="switch btn-color-mode-switch">
+                <input type="checkbox" name="color_mode" id="color_mode" value="1">
+                <label for="color_mode" data-on="Деревня" data-off="Шевченко 83"
+                class="btn-color-mode-switch-inner"></label>
+                </label>
+            </div>
+            <div>
+                <div class="search_by_tags">
+                </div>
+                <i class="fas fa-search fa-2x" onclick="search_by_tags_front()"></i>
+                <!-- <i class="fas fa-sync-alt fa-2x"></i> -->
+                <i class="fas fa-hdd fa-2x" onclick="create_backup()"></i>
+                <i class="fa-solid fa-plus fa-2x" onclick="popup_adder()"></i>
+            </div>
+            
+        </header>
+        <div class="picker">
+
+        </div>
+        <div class="list">
+            <ul>
+                <!-- <li class="one_item">
+                    <div class="name">ТПлюс - 5000</div>
+                    <div class="right">
+                        <div class="tags">
+                            <div class="one_tag">ТПлюс</div>
+                            <div class="one_tag">Шевченко 83</div>
+                        </div>
+                        <div class="time">
+                            <span>12.09.2024</span>
+                        </div>
+                        <div class="delete">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </section>
+    <!-- <script src="static/js.js"></script> -->
+    <script src="../static/js.js"></script>
+</body>
+</html>

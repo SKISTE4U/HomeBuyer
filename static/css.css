@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+:root{
+    --bg: #191919;
+    --accent: #262626;
+    --text_color: #d4d4d4;
+    --icons_color: #838383;
+    --test: #4d5f7d;
+}
+body,html{
+    margin: 0;
+    background: var(--bg);
+}
+*{
+    font-family: "Oswald", sans-serif;
+    color: var(--text_color);
+}
+section{
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+.header_img{
+    width: 100%;
+    height: 10vh;
+}
+.header_img img{
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+}
+section header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section header svg{
+    cursor: pointer;
+}
+/* TAGS ZONE */
+
+
+/* ITEMS ZONE */
+.list .right{
+    display: flex;
+    gap: 10px;
+}
+.list ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+.list ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: var(--accent); */
+    font-size: 1.3em;
+    padding: 3px 3px 3px 3px;
+    border-radius: 10px;
+    transition: background .1s ease-in-out;
+}
+.list ul li:hover{
+    background: var(--accent);
+}
+.list ul li .tags{
+    display: flex;
+    gap: 10px;
+}
+.list ul li .tags .one_tag{
+    background: var(--tag_color);
+    padding: 0px 3px 0px 3px;
+    border-radius: 2px;
+    font-size: .9em;
+    mix-blend-mode: difference;
+    outline: solid var(--tag_color) 0;
+    transition: all .1s ease-in-out;
+}
+.list ul li:hover .tags .one_tag{
+    background: transparent;
+    outline: solid var(--tag_color) 3px;
+}
+.list ul li .time{
+    font-size: 15px ;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+}
+
+.popup_wrapper{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* background: #83838342; */
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    /* animation: hide_popup_wrapper .4s ease-in-out forwards; */
+}
+
+.popup{
+    padding: 20px;
+    border-radius: 5px;
+    width: 20%;
+    position: relative;
+    background: var(--accent);
+}
+.popup button, .popup input{
+    background: transparent;
+    font-size: 1.2em;
+    color: var(--text_color);
+}
+.popup .one_line{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px
+}
+.popup .one_tag:hover{
+    background: transparent;
+    outline: 3px solid var(--tag_color);
+    transition: all .4s;
+}
+.popup .one_tag{
+    background: var(--tag_color);
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    transition: all .4s;
+    outline: none;
+    white-space: nowrap; 
+    user-select: none;
+    cursor: pointer;
+}
+.popup .taags{
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+    /* overflow-x: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.popup .selected_tag{
+    background: transparent;
+    outline: 3px solid var(--tag_color);
+    transition: all .4s;
+}
+.popup input[type=text]{
+    width: 100%;
+}
+.search_by_tags{
+    position: absolute;
+    /* left: 0; */
+    background: var(--accent);
+    width: 110px;
+    margin-left: -130px;
+    margin-top: -20px;
+    /* animation: search_by_tags_show .4s ease-in-out forwards; */
+    transform-origin: 100% 0;
+    z-index: 10;
+    padding: 3px;
+    gap: 3px;
+    transform: scaleY(0);
+    display: flex;
+    flex-direction: column;
+}
+.search_by_tags .one_tag{
+    background: var(--color);
+    max-width: 100%;
+    padding: 3px;
+    border-radius: 3px;
+}
