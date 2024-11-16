@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, redirect, send_from_directory
 import json, subprocess, sys
 import requests
 from threading import Thread
-VERSION = '1'
+VERSION = '2'
 
 def send_file_with_caption(token, chat_id, file_path, caption):
     """
@@ -153,4 +153,4 @@ Thread(target=updater).start()
 
 # if VERSION != 
 
-app.run(host='0.0.0.0',port=80)
+app.run(host='0.0.0.0',port=8080)
