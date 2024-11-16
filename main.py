@@ -111,6 +111,7 @@ def delete_post():
 
 @app.route('/create_backup', methods=['GET'])
 def create_backup():
+    print('AAA')
     try:
         print('Создается бэкап')
         send_file_with_caption(bot_token, chat_id, file_path, 'Из оплаты жкх')
