@@ -118,7 +118,7 @@ def create_backup():
         return 'good'
     except Exception as e:
         print(str(e))
-        return 'bad'
+        return str(e)
 
 
 @app.route('/test', methods=['POST'])
