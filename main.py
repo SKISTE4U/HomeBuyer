@@ -14,11 +14,15 @@ def send_file_with_caption(token, chat_id, file_path, caption):
     :param file_path: Путь к файлу для отправки.
     :param caption: Текстовая подпись к файлу.
     """
+    print('Начался бэкап функция')
     url = f"https://api.telegram.org/bot{token}/sendDocument"
     with open(file_path, 'rb') as file:
         files = {'document': file}
         data = {'chat_id': chat_id, 'caption': caption}
+        print('Отправляю респонс...')
         response = requests.post(url, data=data, files=files)
+        print('Отправил')
+        print(response.text)
     
     if response.status_code == 200:
         print("Файл с подписью успешно отправлен!")
@@ -108,6 +112,7 @@ def delete_post():
 @app.route('/create_backup', methods=['GET'])
 def create_backup():
     try:
+        print('Создается бэкап')
         send_file_with_caption(bot_token, chat_id, file_path, 'Из оплаты жкх')
         return 'good'
     except Exception as e:
