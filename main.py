@@ -111,6 +111,7 @@ def create_backup():
         send_file_with_caption(bot_token, chat_id, file_path, 'Из оплаты жкх')
         return 'good'
     except Exception as e:
+        print(str(e))
         return 'bad'
 
 
