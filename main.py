@@ -135,14 +135,21 @@ def update_script():
         print(f"Ошибка при обновлении скрипта: {e}")
 
 def updater():
+    print('Запустился поток с обновлением')
     while True:
         git_ver = request.get('https://raw.githubusercontent.com/SKISTE4U/HomeBuyer/refs/heads/main/version.txt')
+        print('git_ver = '+git_ver)
+        print('local_ver = '+VERSION)
         if VERSION != git_ver:
+            print('Найдено несовпадение, обновляю')
             update_script()
             subprocess.Popen([sys.executable, 'main.py'])
             sys.exit()
 
         time.sleep(3600)
 
+Thread(target=updater).start()
+
+# if VERSION != 
 
 app.run(host='0.0.0.0',port=80)
