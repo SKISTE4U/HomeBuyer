@@ -46,7 +46,14 @@ function getDateFromTimestamp(timestamp){
     let minute = addZeroz(date.getMinutes())
     return  day+'.'+month+'.'+year+' '+hour+':'+minute
 }
-
+function get_color(tag) {
+    for (const item of TAGS) {
+        if (item[tag]) {
+            return item[tag]; // Возвращаем цвет, если тег найден.
+        }
+    }
+    return null; // Если тег не найден, возвращаем null.
+}
 function place_db(tag = lastTag){
     debug('place_db')
     lastTag = tag
@@ -78,7 +85,7 @@ function place_db(tag = lastTag){
             one_tag.classList.add('one_tag')
             one_tag.innerHTML = elem
             temp.prepend(one_tag)
-            one_tag.setAttribute('style','--tag_color:'+httpGet('getColour/'+elem))
+            one_tag.setAttribute('style','--tag_color:'+get_color(elem))
         }
         List.appendChild(li)
     }
