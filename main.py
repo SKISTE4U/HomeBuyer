@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, send_from_directory, abort, request
 import json
 import requests
+VERSION = '1'
 
 def send_file_with_caption(token, chat_id, file_path, caption):
     """
@@ -119,5 +120,6 @@ def test():
     # return request.data
 
 
+# if VERSION != 
 
 app.run(host='0.0.0.0',port=80)
