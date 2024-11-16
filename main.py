@@ -137,7 +137,7 @@ def update_script():
 def updater():
     print('Запустился поток с обновлением')
     while True:
-        git_ver = request.get('https://raw.githubusercontent.com/SKISTE4U/HomeBuyer/refs/heads/main/version.txt')
+        git_ver = requests.get('https://raw.githubusercontent.com/SKISTE4U/HomeBuyer/refs/heads/main/version.txt')
         print('git_ver = '+git_ver)
         print('local_ver = '+VERSION)
         if VERSION != git_ver:
